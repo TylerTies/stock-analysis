@@ -15,9 +15,11 @@ Refactoring the code allowed us to eliminate some redundancy in working through 
 ### Refactored Code
 The refactored code introduces a tickerIndex that allowed us to store individual values for each ticker as we go through the code and saved for later when we create the output.  An example is below where the tickerIndex is used to count and store the tickerVolumes.
 
+```
 If Cells(i, 1).Value = tickers(tickerIndex) Then
 tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(i, 8).Value
 End If
+```
 
 This allowed us to remove one of the For loops and require only one cycle through the code.  The output values were stored in arrays instead of individual variables that had previously needed to be output before being reused again in another For loop running through all rows.  The refactored code ran significantly faster.
 
